@@ -7,6 +7,8 @@ public class NameFormatter {
     String LastName;
     String Suffix;
 
+    private NameFormatter(){}
+
     public static String format(String firstName, String lastName) {
         return lastName + ", " + firstName;
     }
@@ -16,7 +18,13 @@ public class NameFormatter {
     }
 
     public static String format(String fullName) {
+        StringBuilder stringFormatted = new StringBuilder();
+        String[] fullNameArray = fullName.split(" ");
 
+        for (String fullNameComponent : fullNameArray) {
+            stringFormatted.append(fullNameComponent);
+        }
+        return stringFormatted.toString();
     }
 
 }
